@@ -1,6 +1,6 @@
 # class for each drill on the canvas 
-class drill: 
-    def __init__(self, x, y, vector, color):
+class Drill: 
+    def __init__(self, x, y):
         # xth drill from the left  
         self.x = x
 
@@ -8,10 +8,10 @@ class drill:
         self.y = y
 
         # symbol vector
-        self.vector = vector
+        self.vector = None
 
         # drill color 
-        self.color = color
+        self.color = None
 
 # class for each color 
 class color:

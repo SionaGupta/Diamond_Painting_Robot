@@ -1,4 +1,4 @@
-from classes import color
+import classes
 
 colors = []
 
