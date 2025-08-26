@@ -17,6 +17,8 @@ canvas = []
 
 # iterate over each drill 
 for y in range(d_height):
+    row = []
+
     for x in range(d_length): 
         # create a drill object
         drill = Drill(x, y)
@@ -26,7 +28,10 @@ for y in range(d_height):
 
         #compare drill vector to color vectors 
 
-        #append drill to canvas array
-        canvas[x][y] = drill
+        #append drill to row
+        row.append(drill)
+
+    # append row y to canvas   
+    canvas.append(row)
 
 

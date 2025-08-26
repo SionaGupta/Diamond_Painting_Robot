@@ -13,9 +13,8 @@ def generate_vector(x, y, name, pxl):
 
     r, g, b, a = pixels[x0, y0]
 
-    print (r)
-    print(g)
-    print(b)
-    
+    print(x)
+    print(y)
+
     # temp return 
     return r
