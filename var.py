@@ -9,3 +9,7 @@ name = "space.png"
 
 # dimension of a drill in pixels 
 pxl = 16
+
+BW_name = "BW_space.png"
+
+index_name = "A.png"
