@@ -13,7 +13,7 @@ def generate_vector(x, y):
     x0 = (var.pxl * x)
     y0 = (var.pxl * y)
 
-    img = Image.open(var.BW_name)
+    img = Image.open(var.name)
     crop_box = (x * 16, y * 16, x * 16 + 16, y * 16 + 16)  # x1, y1, x2, y2
     cropped_img = img.crop(crop_box)
 
