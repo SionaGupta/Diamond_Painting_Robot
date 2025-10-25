@@ -11,9 +11,9 @@ class Cord:
         self.y = y
 
 cords = [
-    Cord(1, 2),
+    Cord(1, 1),
+    Cord(3, 3),
     Cord(2, 4),
-    Cord(3, 6),
     Cord(4, 5),
     Cord(0, 0)
 ]
@@ -29,9 +29,8 @@ ser.write(b"Hello World\n")
 # G-Code 
 for c in cords: 
     ser.write(f"{c.x} {c.y}\n".encode())
-    print("moving to " + c.x + " and " + c.y)
-    time.sleep(0.1)
-
+    print("moving to " + str(c.x) + " and " + str(c.y))
+    time.sleep(4.   )
 
 ser.close()
 
