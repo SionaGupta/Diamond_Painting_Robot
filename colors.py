@@ -1,4 +1,0 @@
-import classes
-
-colors = []
-
