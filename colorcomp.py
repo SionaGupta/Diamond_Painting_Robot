@@ -76,14 +76,14 @@ def get_dominant_color(block):
 # dictionary to store diamond cords per color
 color_coords = {color_name: [] for color_name in diamond_colors.keys()}
 
-'''
+# iterate over entire painting
 for i in range(diamond_rows):
     for j in range(diamond_cols):
 
         # get the block of pixels for this diamond
         block = img_array[
-            i*diamond_size:(i+1)*diamond_size,
-            j*diamond_size:(j+1)*diamond_size
+            (i*diamond_size):int((i+1)*diamond_size) ,
+            j*diamond_size+1:int((j+0.25)*diamond_size) 
         ]
 
         # get the dom color
@@ -91,11 +91,14 @@ for i in range(diamond_rows):
         
         # Match dominant color to diamond_colors
         for color_name, rgb in diamond_colors.items():
-            if np.linalg.norm(np.array(dominant) - np.array(rgb)) < 30:  # tolerance
-                color_coords[color_name].append((i+1, j+1))  # diamond coordinates start at 1
+            if np.linalg.norm(np.array(dominant) - np.array(rgb)) < 25:  # tolerance
+                color_coords[color_name].append((i, j))  # diamond coordinates starting 0, 0
                 break
-'''
 
+
+
+
+# get color of single diamond 
 def get_color(x, y):
     i = y - 1 #Y 
     j = x - 1 # X 
@@ -118,10 +121,10 @@ def get_color(x, y):
 
     for color_name, rgb in diamond_colors.items():
         if np.linalg.norm(np.array(dominant) - np.array(rgb)) < 25:  # tolerance
-            print("diamond color:", color_name)  # diamond coordinates start at 1
+            print("diamond color:", color_name) 
             break
 
 
     print(dominant)
 
-get_color(21, 19)
+
