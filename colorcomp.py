@@ -57,20 +57,22 @@ for i in range(diamond_rows):
                 break
 '''
 
-i = 4 - 1
-j = 16 - 1
+i = 7 - 1
+j = 34 - 1
     
     #pixel block
 block = img_array[
-        i*diamond_size:(i*diamond_size + 5),
-        j*diamond_size:(j*diamond_size + 5)
+        i*diamond_size:(i+1)*diamond_size ,
+        j*diamond_size:(j+1)*diamond_size 
     ]
 
 dominant = get_dominant_color(block)
 
 for color_name, rgb in diamond_colors.items():
-            if np.linalg.norm(np.array(dominant) - np.array(rgb)) < 30:  # tolerance
-                print("diamond color:", color_name)  # diamond coordinates start at 1
-                print(dominant)
-                break
+    if np.linalg.norm(np.array(dominant) - np.array(rgb)) < 30:  # tolerance
+        print("diamond color:", color_name)  # diamond coordinates start at 1
+        print(dominant)
+        break
+
+
 
