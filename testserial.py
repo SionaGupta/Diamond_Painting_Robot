@@ -1,5 +1,7 @@
 import serial 
 import time
+import colorcomp
+
 
 # Example Cords 
 class Cord: 

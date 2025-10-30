@@ -96,30 +96,32 @@ for i in range(diamond_rows):
                 break
 '''
 
-i = 12 - 1 #rows 
-j = 29 - 1 # columns 
-    
-    #pixel block
-block = img_array[
-        i*diamond_size:int((i+1)*diamond_size) ,
-        j*diamond_size:int((j+0.25)*diamond_size) 
-    ]
+def get_color(x, y):
+    i = y - 1 #Y 
+    j = x - 1 # X 
+        
+        #pixel block
+    block = img_array[
+            (i*diamond_size):int((i+1)*diamond_size) ,
+            j*diamond_size+1:int((j+0.25)*diamond_size) 
+        ]
 
-dominant = get_dominant_color(block)
+    dominant = get_dominant_color(block)
 
-# testing boundries 
-crop_box = (j * diamond_size, i*diamond_size,(j+1)*diamond_size ,(i+1)*diamond_size)  # x1, y1, x2, y2
-cropped_img = image.crop(crop_box)
+    # testing boundries 
+    crop_box = (j * diamond_size, i*diamond_size,(j+1)*diamond_size ,(i+1)*diamond_size)  # x1, y1, x2, y2
+    cropped_img = image.crop(crop_box)
 
-# Save under a new name
-cropped_img.save("b.png")
-
-
-for color_name, rgb in diamond_colors.items():
-    if np.linalg.norm(np.array(dominant) - np.array(rgb)) < 25:  # tolerance
-        print("diamond color:", color_name)  # diamond coordinates start at 1
-        break
+    # Save under a new name
+    cropped_img.save("b.png")
 
 
-print(dominant)
+    for color_name, rgb in diamond_colors.items():
+        if np.linalg.norm(np.array(dominant) - np.array(rgb)) < 25:  # tolerance
+            print("diamond color:", color_name)  # diamond coordinates start at 1
+            break
 
+
+    print(dominant)
+
+get_color(21, 19)
