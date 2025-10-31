@@ -80,7 +80,7 @@ def ser():
 
 
         # Pick up drill
-        ser.write("M3\n".encode())
+        ser.write("M03\n".encode())
         print("Picking up drill")
         time.sleep(4)  # wait for servo
 
@@ -90,7 +90,7 @@ def ser():
         time.sleep(4)
 
         # Place drill
-        ser.write("M3\n".encode())
+        ser.write("M03\n".encode())
         print("Placing drill")
         time.sleep(4)
 
