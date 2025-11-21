@@ -66,7 +66,7 @@ def ser():
     # for black drills 
     for c in colorcomp.color_coords["3"]:
         # Move to drill supply location
-        drill_x, drill_y = 4, -5  # example supply location, To be Changed to reflect changing drill pick up locations
+        drill_x, drill_y = 4, -5  # To be Changed to reflect changing drill pick up locations
 
         # Get X and Y
         x, y = c
@@ -93,8 +93,6 @@ def ser():
         ser.write("M03\n".encode())
         print("Placing drill")
         time.sleep(4)
-
-
     ser.close()
 
 ser()
